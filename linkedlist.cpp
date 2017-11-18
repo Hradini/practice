@@ -9,7 +9,7 @@ class node {
 class linkedList {
 	node *head, *tail;
 	public:
-		list()
+		linkedList()
 		{
 			head= NULL;
 			tail= NULL;
@@ -45,9 +45,9 @@ class linkedList {
 				prev=cur;
 				cur = cur->next ;	
 			}
+			temp->data=value;
 			temp->next=cur;
 			prev->next=temp;
-			temp=NULL;
 		}
 		void displayList()
 		{
@@ -80,10 +80,10 @@ int main(){
 	obj.createNode(46);
 	obj.displayList();
 	cout<<"\n";
-	int n;
-	cout<< "enter value to be added to the list" <<endl;
-	cin>>n;
-	obj.insertNode(2, n);
+	//int n;
+	//cout<< "enter value to be added to the list" <<endl;
+	//cin>>n;
+	obj.insertNode(2, 6);
 	obj.displayList();
 	cout<<"\n";
 	obj.deleteNode(3);
