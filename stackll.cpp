@@ -6,17 +6,16 @@ struct node{
 	node *next;
 };
 
-struct stack{
-	node *bottom;
+class stack{
 	node *top;
-	stack()
-	{
-		bottom=NULL;
-		top=NULL;
-	}
-	void push(int value);
-	void pop();
-	void displayStack();
+	public:
+		stack()
+		{
+			top=NULL;
+		}
+		void push(int value);
+		void pop();
+		void displayStack();
 };
 
 void stack::push(int value){
@@ -24,16 +23,15 @@ void stack::push(int value){
 	temp->data = value;
 	temp->next=NULL;
 	if(top==NULL){
-		temp->next=bottom;
-		top->next = temp;
+		top=temp;
 	}else{
-		temp->next = top->next;
+		temp->next = top;
 		top=temp;
 	}
 }  
 void stack::pop(){
 	node *temp=NULL;
-	temp->next=top;
+	temp=top;
 	top=top->next;
 	delete temp;
 }
