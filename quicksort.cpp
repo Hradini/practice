@@ -8,7 +8,7 @@ void quicksorta(int arr[],int left,int right){
 	j=right;
 	int pivot= arr[(left+right)/2];
 	int flagi=0,flagj=0;
-	
+	//it does not seem to be entering this while loop even when i<j
 	while(i<j){
 		if(arr[i]<=pivot){
 			++i;
