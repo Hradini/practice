@@ -8,7 +8,7 @@ void quicksorta(int arr[],int left,int right){
 	j=right;
 	int pivot= arr[(left+right)/2];
 	int flagi=0,flagj=0;
-	//it does not seem to be entering this while loop even when i<j
+	
 	while(i<j){
 		if(arr[i]<=pivot){
 			++i;
@@ -20,18 +20,22 @@ void quicksorta(int arr[],int left,int right){
 			flagj=1;
 			
 		}
-		if(i<j && flagi==flagj==0){
+		if(i<j && flagi==0 && flagj==0){
 			temp=arr[j];
 			arr[j]=arr[i];
 			arr[i]=temp;
 			++i;
 			--j;
 			flagi=flagj=0;
-			
+			cout<<"hello";
 		}
 	}
-	if(left!=right){
+	if(left<i){
+		cout<<"left partion has happened";
 		quicksorta(arr,left,i);
+	}
+	if(right>j){
+		cout<<"right partion has happened";
 		quicksorta(arr,j,right);
 	}
 	
@@ -40,8 +44,8 @@ void quicksorta(int arr[],int left,int right){
 
 void display(int arr[]){
 	for(int i=0;i<6;++i){
-		cout<<arr[i];	
-	}
+		cout<<arr[i]<<"\t";	
+	}cout<<endl;
 }
 
 int main(){
