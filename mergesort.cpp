@@ -3,7 +3,7 @@ using namespace std;
 
 void display(int arr[], int size){
 	int i=0;
-	while(i!=size-1){
+	while(i<size){
 		cout<<arr[i];
 		i++;
 	}
@@ -26,7 +26,6 @@ void merge(int arr[], int low, int mid, int high, int marr[]){
 			k++;
 		}
 	}
-	//display(marr,10);
 }
 
 int mergesort(int arr[], int low, int high, int marr[]){
@@ -44,7 +43,7 @@ int mergesort(int arr[], int low, int high, int marr[]){
 int main(){
 	int size=10;
 	int marr[size];
-	int arr[10]={5,6,2,9,11,1,3,8,4,7};
+	int arr[10]={5,6,2,9,0,1,3,8,4,7};
 	int i=0;
 	/*while(i!=size-1){
 		cout<<"enter number";
