@@ -55,6 +55,19 @@ class Btree{
 		cout<<temp->data;
 		display(temp->right);
 	}
+	void bsearch(int key, node* cur){
+	cout<<cur->data<<endl;
+		if(cur==NULL) return;
+		if(key < cur->data) bsearch(key, cur->left);
+		else if(cur->data==key){
+			if(cur->parent!=NULL) cout<<"Parent of the node"<<(cur->parent)->data;
+			if(cur->left!=NULL) cout<<"Left child"<<(cur->left)->data<<endl;
+			if(cur->right!=NULL) cout<<"Right child"<<(cur->right)->data<<endl;
+		}
+		else 
+		bsearch(key, cur->right);
+			
+	}	
 };
 
 int main(){
@@ -65,6 +78,10 @@ int main(){
 	bt1.insert(1);
 	bt1.insert(8);
 	bt1.display(bt1.root);
+	cout<<"Enter key";
+	int key;
+	cin>> key;
+	bt1.search(key, bt1.root);
 	
 }	
 			
