@@ -30,6 +30,7 @@ class Btree{
 				if((cur->data)>(temp->data)){
 					if(cur->left==NULL){
 						cur->left=temp;
+						temp->parent=cur;
 						break;
 					}
 					else{
@@ -39,6 +40,7 @@ class Btree{
 				else{
 					if(cur->right==NULL){
 						cur->right=temp;
+						temp->parent=cur;
 						break;
 					}
 					else{
