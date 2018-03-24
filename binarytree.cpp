@@ -83,7 +83,7 @@ int main(){
 	cout<<"Enter key";
 	int key;
 	cin>> key;
-	bt1.search(key, bt1.root);
+	bt1.bsearch(key, bt1.root);
 	
 }	
 			
